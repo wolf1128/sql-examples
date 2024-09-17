@@ -28,3 +28,4 @@ ORDER BY COUNT(id) DESC;
 SELECT E.name, D.department_name, E.salary
 FROM employees AS E
 LEFT JOIN departments AS D ON E.department_id = D.id 
+GROUP BY E.name;

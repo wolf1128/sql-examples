@@ -8,6 +8,7 @@
     - EX#6 | SELECT with WHERE using LIKE operator
     - EX#7 | SELECT with WHERE using BETWEEN operator
     - EX#8 | SELECT with aliases
+    - EX#9 | ALTER TABLE RENAME
 */
 
 -- Ex#1
@@ -45,3 +46,6 @@ WHERE salary BETWEEN 70000 AND 100000;
 -- EX#8
 SELECT id AS EmployeeID, name AS EmployeeName, salary AS EmployeeSalary
 FROM employees;
+
+-- EX#9
+ALTER TABLE new_departments  RENAME TO departments;

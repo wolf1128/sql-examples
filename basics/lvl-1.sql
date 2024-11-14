@@ -1,14 +1,8 @@
 /*
-* Specifications:
-
-    Syntax:
-        SELECT column_name(s)
-        FROM table_name
-        WHERE condition
-        GROUP BY column_name(s)
-        ORDER BY column_name(s);
-
-    Selected DB: demo-db-0.sqlite
+* Covered Examples:
+    - EX#1: GROUP BY with COUNT
+    - EX#2: GROUP BY with COUNT and ORDER BY
+    - EX#3: GROUP BY with HAVING
 */
 
 -- Ex#1
@@ -18,14 +12,16 @@ GROUP BY name;
 
 
 -- Ex#2
-SELECT COUNT(id), name
+SELECT id, name
 FROM employees
 GROUP BY name
-ORDER BY COUNT(id) DESC;
+ORDER BY id DESC;
 
 
--- Ex#3 GB with JOIN
-SELECT E.name, D.department_name, E.salary
-FROM employees AS E
-LEFT JOIN departments AS D ON E.department_id = D.id 
-GROUP BY E.name;
+-- Ex#3 
+SELECT id, name, salary
+FROM employees
+WHERE salary > 5000
+GROUP BY department_id
+HAVING department_id = 2
+ORDER BY id DESC;
